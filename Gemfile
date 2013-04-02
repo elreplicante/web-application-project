@@ -21,13 +21,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test, :development do
-  gem "rspec-rails", "~> 2.0"
+# Gems used for testing
+group :development do
+   gem 'rspec-rails'
+end
+
+group :test do
+   gem 'rspec'
 end
 
 gem 'jquery-rails'
-
-gem 'bootstrap-sass'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
