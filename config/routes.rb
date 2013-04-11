@@ -1,5 +1,6 @@
 WebApplicationProject::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   
 
   root to: 'static_pages#home'
@@ -8,6 +9,8 @@ WebApplicationProject::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
 
   match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match 'signout',  to: 'sessios#destroy', via: :delete
 
 
 
