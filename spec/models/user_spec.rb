@@ -31,7 +31,7 @@ describe User do
   it { should be_valid }
   it { should_not be_admin }
 
-  describe "with admin attributes set to 'true'" do
+  describe "with admin attribute set to 'true'" do
     before do
       @user.save!
       @user.toggle!(:admin)
