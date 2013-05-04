@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'spec_helper'
 
 describe "Static pages" do
@@ -10,7 +12,7 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:heading)    { 'Universidad Complutense Microposts Service' }
+    let(:heading)    { 'Servicio de Microposts de la Facultad de Informática' }
     let(:page_title) { '' }
 
     it_should_behave_like "all static pages"
@@ -46,26 +48,26 @@ describe "Static pages" do
 
   describe "Help page" do
     before { visit help_path }
-    let(:heading)    { 'Help' }
-    let(:page_title) { 'Help' }
+    let(:heading)    { 'Ayuda' }
+    let(:page_title) { 'Ayuda' }
 
     it_should_behave_like "all static pages"
-    it { should have_selector 'title', text: 'Help' }
+    it { should have_selector 'title', text: 'Ayuda' }
   end
 
   describe "About page" do
     before { visit about_path }
-    let(:heading)    { 'About' }
-    let(:page_title) { 'About' }
+    let(:heading)    { 'Acerca de' }
+    let(:page_title) { 'Acerca de' }
 
     it_should_behave_like "all static pages"
-    it { should have_selector 'title', text: 'About' }
+    it { should have_selector 'title', text: 'Acerca de' }
   end
 
   describe "Contact page" do
     before { visit contact_path }
-    let(:heading)    { 'Contact' }
-    let(:page_title) { 'Contact' }
+    let(:heading)    { 'Contacto' }
+    let(:page_title) { 'Contacto' }
 
     it_should_behave_like "all static pages"
     it { should have_selector 'title', text: 'Contact' }
@@ -73,15 +75,15 @@ describe "Static pages" do
 
   it "should have the right links on the layout" do
     visit root_path
-    click_link "About"
-    page.should have_selector 'title', text: full_title('About Us')
-    click_link "Help"
-    page.should have_selector 'title', text: full_title('Help')
-    click_link "Contact"
-    page.should have_selector 'title', text: full_title('Contact')
-    click_link "Home"
-    click_link "Sign up now!"
-    page.should have_selector 'title', text: full_title('Sign up')
+    click_link "Acerca de"
+    page.should have_selector 'title', text: full_title('Acerca de')
+    click_link "Ayuda"
+    page.should have_selector 'title', text: full_title('Ayuda')
+    click_link "Contacto"
+    page.should have_selector 'title', text: full_title('Contacto')
+    click_link "Inicio"
+    click_link "¡Regístrate ahora!"
+    page.should have_selector 'title', text: full_title('Registro')
     click_link "UCMs"
     page.should have_selector 'title', text: full_title('')
   end

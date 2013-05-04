@@ -60,8 +60,8 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('h1',    text: 'Sign up') }
-    it { should have_selector('title', text: full_title('Sign up')) }
+    it { should have_selector('h1',    text: 'Registro') }
+    it { should have_selector('title', text: full_title('Registro')) }
   end
 
   describe "profile page" do
@@ -136,7 +136,7 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_selector('title', text: 'Sign up') }
+        it { should have_selector('title', text: 'Registro') }
         it { should have_content('error') }
       end
     end
