@@ -80,18 +80,18 @@ describe "User pages" do
 
         it "should increment the followed user count" do
           expect do
-            click_button "Follow"
+            click_button "Seguir"
           end.to change(user.followed_users, :count).by(1)
         end
 
         it "should increment the other user's followers count" do
           expect do
-            click_button "Follow"
+            click_button "Seguir"
           end.to change(other_user.followers, :count).by(1)
         end
 
         describe "toggling the button" do
-          before { click_button "Follow" }
+          before { click_button "Seguir" }
           it { should have_selector('input', value: 'Unfollow') }
         end
       end

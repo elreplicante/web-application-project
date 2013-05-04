@@ -3,6 +3,7 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$mainBlue: rgb(17, 92, 171);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -42,8 +43,14 @@ textarea {
 
 .center {
   text-align: center;
+
   h1 {
     margin-bottom: 10px;
+    color: black;
+  }
+
+  h2 {
+    color: black;
   }
 }
 
@@ -64,7 +71,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
-  color: #3a87ad;
+  
 }
 
 h2 {
@@ -77,7 +84,7 @@ h2 {
 }
 
 h3 {
-  color: #3a87ad;
+  
 }
 
 p {
@@ -164,8 +171,8 @@ aside {
   overflow: auto;
   a {
     float: left;
-    padding: 0 10px;
-    border-left: 1px solid $grayLighter;
+    padding: 0 10px 0 0;
+  /*  border-left: 1px solid $grayLighter; */
     color: gray;
     &:first-child {
       padding-left: 0;
@@ -263,7 +270,7 @@ aside {
   .container-fluid {
     margin-right: auto;
   margin-left: auto;
-    max-width: 960px;
+    max-width: 950px;
   }
  }
  
