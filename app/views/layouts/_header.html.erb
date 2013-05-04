@@ -1,9 +1,14 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "UCMs", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      <%= link_to "UCMs", root_path, id: "logo" , :class => "brand"%>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
           <li><%= link_to "Inicio", root_path %></li>
           <li><%= link_to "Ayuda", help_path %></li>
           <% if signed_in? %>
@@ -25,7 +30,7 @@
             <li><%= link_to "Entrar", signin_path %></li>
           <% end %>
         </ul>
-      </nav>
+      </div>
     </div>
   </div>
 </header>

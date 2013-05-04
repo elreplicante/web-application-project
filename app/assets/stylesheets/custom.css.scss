@@ -21,6 +21,7 @@ $grayMediumLight: #eaeaea;
   @include box_sizing;
 }
 
+
 /* universal */
 
 html {
@@ -28,7 +29,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+ padding-top: 60px;
 }
 
 section {
@@ -46,11 +47,10 @@ textarea {
   }
 }
 
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1024px; /* or 950px */
+.container {
+  max-width: 960px;
 }
+
 
 
 /* typography */
