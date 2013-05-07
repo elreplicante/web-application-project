@@ -2,7 +2,7 @@
   <span class="content"><%= micropost.content %></span>
   <span class="timestamp">
   	<i class="icon-comment"></i>
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    Publicado <%= time_ago_in_words(micropost.created_at) %> ago.
   </span>
   <% if current_user?(micropost.user) %>
     <%= link_to "borrar", micropost, method: :delete,
