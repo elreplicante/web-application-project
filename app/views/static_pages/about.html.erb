@@ -1,10 +1,50 @@
 <% provide(:title, 'Acerca de') %>
 
-    <h1>Acerca de</h1>
-    <p>
-     <%= link_to "Ruby on Rails", "http://rubyonrails.org/" %> es un framework de desarrollo web basado en el lenguaje de programación Ruby.  En la actualidad hay muchos lenguajes de programación y frameworks para el desarrollo web (PHP + Zend, Python + Django) pero, ¿por qué Rails?.
+<h1>Acerca de</h1>
+<%= image_tag("rails-love.png", :class => "center-img") %>
+<p>
+	<%= link_to "Ruby on Rails", "http://rubyonrails.org/" %> es un framework de desarrollo web basado en el lenguaje de programación Ruby.  En la actualidad hay muchos lenguajes de programación y frameworks para el desarrollo web (PHP + Zend, Python + Django) pero, ¿por qué Rails?. Fijémonos primero en las ventajas de Ruby.
+</p>
 
-     Fijémonos primero en las ventajas de Ruby.
 
-     
-  
+<p>Ruby es:</p>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#tab1" data-toggle="tab">Orientado a objetos</a></li>
+		<li><a href="#tab2" data-toggle="tab">Interpretado</a></li>
+		<li><a href="#tab3" data-toggle="tab">Reflexivo</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="tab1">
+			<p>Con todas las ventajas que ello supone :D.  En el caso de Ruby, las variables son siempre referencias a objetos y no los objetos mismos.  Por supuesto, soporta el mecanismo de herencia, pero además enlaza las librerías dinámicamente con lo que evita la duplicación de código.</p>
+		</div>
+		<div class="tab-pane" id="tab2">
+			<p>El código no necesita ser compilado, sino que es ejecutado por medio de un intérprete.  Su ejecución es más lenta que en lenguajes compilados</p>
+		</div>
+		<div class="tab-pane" id="tab3">
+			<p>El programa es capaz de observar y opcionalmente de modificar su propia estructura de alto nivel</p>
+		</div>
+	</div>
+</div>
+
+<p>Así que Rails está basado en Ruby (lo cual ya es bastante bueno...), pero además ofrece una serie de ventajas para el desarrollador:</p>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#tab4" data-toggle="tab">DRY</a></li>
+		<li><a href="#tab5" data-toggle="tab">Convention over Configuration</a></li>
+		<li><a href="#tab6" data-toggle="tab">REST</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="tab4">
+			<p>Don't Repeat Yourself!</p>
+			<p>Con Rails nunca volverás a tener código duplicado en tu aplicación.  ¡Tus jefes estarán muy contentos!</p>
+		</div>
+		<div class="tab-pane" id="tab5">
+			<p>Rails es listo.  Si tienes una clase User, sabrá que la tabla que referencia a esa clase será users.  Aunque si quieres cambiar esta convención te será fácil cambiarla.  Rails sabe lo que vas a hacer y cómo lo vas a hacer, así que no tienes que preocuparte por la configuración</p>
+		</div>
+		<div class="tab-pane" id="tab6">
+			<p>O "Representational State Transfer".  Protocolo cliente/servidor sin estado: cada mensaje HTTP contiene toda la información necesaria para comprender la petición. Como resultado, ni el cliente ni el servidor necesitan recordar ningún estado de las comunicaciones entre mensajes (excepto las cookies, claro está...)  Además posee un conjunto de operaciones bien definidas que se aplican a todos los recursos de información: HTTP en sí define un conjunto pequeño de operaciones, las más importantes son POST, GET, PUT y DELETE. Con frecuencia estas operaciones se equiparan a las operaciones CRUD que se requieren para la persistencia de datos.</p>
+		</div>
+	</div>
+</div>
+
