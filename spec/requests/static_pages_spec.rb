@@ -16,7 +16,7 @@ describe "Static pages" do
     let(:page_title) { '' }
 
     it_should_behave_like "all static pages"
-    it { should_not have_selector 'title', text: '| Home' }
+    it { should_not have_selector 'title', text: '| Inicio' }
 
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
@@ -40,8 +40,8 @@ describe "Static pages" do
           visit root_path
         end
 
-        it { should have_link("0 following", href: following_user_path(user)) }
-        it { should have_link("1 followers", href: followers_user_path(user)) }
+        it { should have_link("0 siguiendo", href: following_user_path(user)) }
+        it { should have_link("1 seguidores", href: followers_user_path(user)) }
       end
     end
   end
@@ -84,7 +84,7 @@ describe "Static pages" do
     click_link "Inicio"
     click_link "¡Regístrate ahora!"
     page.should have_selector 'title', text: full_title('Registro')
-    click_link "UCMs"
+    click_link "FDI Microposts"
     page.should have_selector 'title', text: full_title('')
   end
 end

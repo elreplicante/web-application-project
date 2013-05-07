@@ -1,3 +1,5 @@
+# enconding: UTF-8
+
 require 'spec_helper'
 
 describe "Authentication" do
@@ -18,7 +20,7 @@ describe "Authentication" do
   		before { click_button "Entrar" }
 
   		it { should have_selector('title', text: 'Entrar')}
-  		it { should have_selector('div.alert.alert-error', text: 'Invalid')}
+  		it { should have_selector('div.alert.alert-error', text: 'incorrecto')}
 
   		describe "after visiting another page" do
   			before { click_link "Inicio"}
@@ -32,14 +34,14 @@ describe "Authentication" do
 
   		it { should have_selector('title', text: user.name) }
 
-      it { should have_link('Users', href: users_path) }
-  		it { should have_link('Profile', href: user_path(user)) }
-      it { should have_link('Settings', href: edit_user_path(user)) }
-      it { should have_link('Sign out', href: signout_path) }
+      it { should have_link('Usuarios', href: users_path) }
+  		it { should have_link('Perfil', href: user_path(user)) }
+      it { should have_link('Ajustes', href: edit_user_path(user)) }
+      it { should have_link('Salir', href: signout_path) }
       it { should_not have_link('Entrar', href: signin_path) }
 
       describe "followed by signout" do
-        before { click_link "Sign out" }
+        before { click_link "Salir" }
         it { should have_link('Entrar') }
       end
     end
@@ -76,7 +78,7 @@ describe "Authentication" do
 
         describe "after signin in" do
           it "should render the desired protected page" do
-            page.should have_selector('title', text: 'Edit user')
+            page.should have_selector('title', text: 'Editar usuario')
           end
         end
       end
@@ -120,7 +122,7 @@ describe "Authentication" do
         describe "after signing in" do
 
           it "should render the desired protected page" do
-            page.should have_selector('title', text: 'Edit user')
+            page.should have_selector('title', text: 'Editar usuario')
           end
 
           describe "when signing in again" do

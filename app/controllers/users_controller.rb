@@ -1,3 +1,6 @@
+#!ruby19
+# enconding: utf-8
+
 class UsersController < ApplicationController
   before_filter :signed_in_user, 
                 only: [:index, :edit, :update, :destroy, :following, :followers]
@@ -18,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Bienvenido al servicio de microposts de la FDI"
       redirect_to @user
     else
       render 'new'
@@ -32,7 +35,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profile updated"
+      flash[:success] = "Perfil actualizado"
       sign_in @user
       redirect_to @user
     else
@@ -43,10 +46,10 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     if (current_user? user) && (current_user.admin?)
-      flash[:error] = "You are not allowed to delete yourself as and admin."
+      flash[:error] = "No puedes borrarte siendo administrador."
     else
       user.destroy
-      flash[:success] = "User destroyed."
+      flash[:success] = "Usuario borrado."
     end
     redirect_to users_url
   end
@@ -56,14 +59,14 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = "Siguiendo"
     @user = User.find(params[:id])
     @users = @user.followed_users.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = "Seguidores"
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
@@ -73,7 +76,7 @@ class UsersController < ApplicationController
 
   def signed_in_user_filter
     if signed_in?
-      redirect_to root_path, notice: "Already logged in"
+      redirect_to root_path, notice: "Ya has iniciado sesion"
     end
   end
 

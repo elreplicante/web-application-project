@@ -13,8 +13,8 @@ describe "User pages" do
       visit users_path
     end
 
-    it { should have_selector('title', text: 'All users') }
-    it { should have_selector('h1',    text: 'All users') }
+    it { should have_selector('title', text: 'Usuarios') }
+    it { should have_selector('h1',    text: 'Usuarios') }
 
     describe "pagination" do
 
@@ -48,11 +48,11 @@ describe "User pages" do
           end
         end
 
-        it { should have_link('delete', href: user_path(User.first)) }
+        it { should have_link('borrar', href: user_path(User.first)) }
         it "should be able to delete another user" do
-          expect { click_link('delete') }.to change(User, :count).by(-1)
+          expect { click_link('borrar') }.to change(User, :count).by(-1)
         end
-        it { should_not have_link('delete', href: user_path(admin)) }
+        it { should_not have_link('borrar', href: user_path(admin)) }
       end
     end
   end
@@ -104,18 +104,18 @@ describe "User pages" do
 
         it "should decrement the followed user count" do
           expect do
-            click_button "Unfollow"
+            click_button "Dejar de seguir"
           end.to change(user.followed_users, :count).by(-1)
         end
 
         it "should decrement the other user's followers count" do
           expect do
-            click_button "Unfollow"
+            click_button "Dejar de seguir"
           end.to change(other_user.followers, :count).by(-1)
         end
 
         describe "toggling the button" do
-          before { click_button "Unfollow" }
+          before { click_button "Dejar de seguir" }
           it { should have_selector('input', value: 'Follow') }
         end
       end
@@ -154,8 +154,8 @@ describe "User pages" do
         let(:user) { User.find_by_email('user@example.com') }
 
         it { should have_selector('title', text: user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
-        it { should have_link('Sign out') }
+        it { should have_selector('div.alert.alert-success', text: 'Bienvenido') }
+        it { should have_link('Salir') }
       end
 
       it "should create a user" do
@@ -173,7 +173,7 @@ describe "User pages" do
 
     describe "page" do
       it { should have_selector('h1', text: 'Update your profile') }
-      it { should have_selector('title', text: 'Edit user') }
+      it { should have_selector('title', text: 'Editar usuario') }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
 
@@ -196,7 +196,7 @@ describe "User pages" do
 
       it { should have_selector('title', text: new_name) }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('Sign out', href: signout_path) }
+      it { should have_link('Salir', href: signout_path) }
       specify { user.reload.name.should  == new_name }
       specify { user.reload.email.should == new_email }
     end
@@ -230,8 +230,8 @@ describe "User pages" do
         visit following_user_path(user)
       end
 
-      it { should have_selector('title', text: full_title('Following')) }
-      it { should have_selector('h3', text: 'Following') }
+      it { should have_selector('title', text: full_title('Siguiendo')) }
+      it { should have_selector('h3', text: 'Siguiendo') }
       it { should have_link(other_user.name, href: user_path(other_user)) }
     end
 
@@ -241,8 +241,8 @@ describe "User pages" do
         visit followers_user_path(other_user)
       end
 
-      it { should have_selector('title', text: full_title('Followers')) }
-      it { should have_selector('h3', text: 'Followers') }
+      it { should have_selector('title', text: full_title('Seguidores')) }
+      it { should have_selector('h3', text: 'Seguidores') }
       it { should have_link(user.name, href: user_path(user)) }
     end
   end
