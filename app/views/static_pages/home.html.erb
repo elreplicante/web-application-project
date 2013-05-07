@@ -1,5 +1,5 @@
 <% if signed_in? %>
-  <div class="row-fluid">
+  <div class="row">
     <aside class="span4">
       <section>
         <%= render 'shared/user_info' %>
@@ -17,7 +17,7 @@
     </div>
   </div>  
 <% else %>
-<div class="row-fluid">
+<div class="row">
   <div class="center hero-unit">
     <h1>Servicio de Microposts de la Facultad de Informática</h1>
 
@@ -28,7 +28,7 @@
     <%= link_to "¡Regístrate ahora!", signup_path,
                                 class: "btn btn-primary btn-large btn-primary" %>
     <div class="center">
-      <%= link_to image_tag("ruby-logo.png", alt: "Rails", :style => "margin-right: 25px;"), 'http://rubyonrails.org/'%>
+      <%= link_to image_tag("ruby-logo.png", alt: "Ruby", :style => "margin-right: 25px;"), 'http://www.ruby-lang.org/'%>
   <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/'%>
   <%= link_to image_tag("bootstrap-logo.png", alt: "Twitter Bootstrap"), 'http://twitter.github.io/bootstrap/'%>
   </div>
