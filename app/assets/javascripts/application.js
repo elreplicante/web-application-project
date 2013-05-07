@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.hoverizr.min
 //= require bootstrap
 //= require_tree .
+
