@@ -4,6 +4,7 @@
 
 $grayMediumLight: #eaeaea;
 $mainBlue: rgb(17, 92, 171);
+$borderGray: #ddd;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -288,4 +289,10 @@ aside {
 @media (max-width: 767px) {  }
  
 /* Landscape phones and down */
-@media (max-width: 480px) {  }
+@media (max-width: 480px) {  
+  .container-fluid {
+    margin-right: auto;
+  margin-left: auto;
+    max-width: 480px;
+  }
+}
